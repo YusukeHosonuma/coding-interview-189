@@ -1,0 +1,2 @@
+test:
+	stack exec doctest .
