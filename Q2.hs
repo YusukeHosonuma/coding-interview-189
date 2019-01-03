@@ -17,4 +17,23 @@ import Lib
 -- >>> isPalindrome "あ"
 -- True
 --
-isPalindrome xs = xs == reverse xs
+isPalindrome xs = xs == reverse' xs
+
+-- | 回文かどうか判定する
+--
+-- >>> isPalindrome' "たけやぶやけた"
+-- True
+-- >>> isPalindrome' "こんにちは"
+-- False
+-- >>> isPalindrome' ""
+-- True
+-- >>> isPalindrome' "あ"
+-- True
+--
+-- 明白な実装である`isPalindrome`と比較：
+-- prop> isPalindrome xs == isPalindrome' xs
+--
+isPalindrome' []       = True
+isPalindrome' [x]      = True
+isPalindrome' [x, y]   = x == y
+isPalindrome' (x:y:xs) = x == last xs && isPalindrome' (y : init xs)
