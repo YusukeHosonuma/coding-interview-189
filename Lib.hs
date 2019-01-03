@@ -1,4 +1,6 @@
+--
 -- 標準ライブラリの関数を書き直したモジュール
+--
 module Lib where
 
 import Data.List
@@ -42,6 +44,22 @@ elem' x (y:ys) = x == y || elem' x ys
 --
 even' :: (Integral a) => a -> Bool
 even' a = a `mod` 2 == 0
+
+-- | `length`の独自実装
+--
+-- >>> length' []
+-- 0
+-- >>> length' [1]
+-- 1
+-- >>> length' [1,2,3]
+-- 3
+--
+-- 標準と比較して検証：
+-- prop> length' x == length x
+--
+length' :: [a] -> Int
+length' [] = 0
+length' (x:xs) = 1 + length' xs
 
 -- | `filter`の独自実装
 --
@@ -94,8 +112,8 @@ sort' :: (Ord a) => [a] -> [a]
 sort' [] = []
 sort' (x:xs) = ys ++ [x] ++ zs
     where
-        ys = sort' $ filter (\y -> y <= x) xs
-        zs = sort' $ filter (\z -> z > x) xs
+        ys = sort' $ filter' (\y -> y <= x) xs
+        zs = sort' $ filter' (\z -> z > x) xs
 
 -- | `takeWhile`の独自実装
 --

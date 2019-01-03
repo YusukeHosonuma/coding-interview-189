@@ -24,7 +24,7 @@ import Lib
 -- False
 --
 -- ユニークな文字列は、ソート・グループした文字数の長さと、元の文字列の長さが一致する
--- prop> isUnique s == ((length $ group' $ sort' s) == length s)
+-- prop> isUnique s == ((length' $ group' $ sort' s) == length' s)
 --
 isUnique :: String -> Bool
 isUnique [] = True
