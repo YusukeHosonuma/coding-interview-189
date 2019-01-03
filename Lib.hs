@@ -115,6 +115,21 @@ sort' (x:xs) = ys ++ [x] ++ zs
         ys = sort' $ filter' (\y -> y <= x) xs
         zs = sort' $ filter' (\z -> z > x) xs
 
+-- | `reverse`の独自実装
+--
+-- >>> reverse' []
+-- []
+-- >>> reverse' [1]
+-- [1]
+-- >>> reverse' [1,2,3]
+-- [3,2,1]
+--
+-- 標準と比較して検証：
+-- prop> reverse' xs == reverse xs
+--
+reverse' [] = []
+reverse' (x:xs) = reverse' xs ++ [x]
+
 -- | `takeWhile`の独自実装
 --
 -- >>> takeWhile (< 3) []
