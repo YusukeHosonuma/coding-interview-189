@@ -4,12 +4,23 @@
 
 標準関数も含めて全部自分で書く（たぶん）
 
+## Environment
+
+- Tools
+  - Haskell Stack 1.9.3
+  - GHC 8.6.3
+- Tests
+  - doctest
+  - QuickCheck
+- CI
+  - Travis CI
+
 ## TODO
 
-- [ ] CI でテストを回す（余力あれば）
+All completed in current.
 
-## テスト
+## Run tests
 
 ```console
-make doctest
+stack test
 ```
