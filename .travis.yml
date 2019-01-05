@@ -19,7 +19,7 @@ install:
   - stack --no-terminal --install-ghc test --only-dependencies
 
 script:
-  - stack test
+  - stack --no-terminal --skip-ghc-check test
 
 notifications:
   email: false
