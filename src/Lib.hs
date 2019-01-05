@@ -131,8 +131,8 @@ sort' :: (Ord a) => [a] -> [a]
 sort' [] = []
 sort' (x:xs) = ys ++ [x] ++ zs
     where
-        ys = sort' $ filter' (\y -> y <= x) xs
-        zs = sort' $ filter' (\z -> z > x) xs
+        ys = sort' $ filter' (<= x) xs
+        zs = sort' $ filter' (> x) xs
 
 -- | `reverse`の独自実装
 --
