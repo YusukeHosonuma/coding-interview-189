@@ -1,2 +1,2 @@
 doctest:
-	stack exec doctest src
+	stack test
