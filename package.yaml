@@ -46,3 +46,12 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - coding-interview
+  coding-interview-doctest:
+    main:                test/doctests.hs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - coding-interview
+    - doctest
