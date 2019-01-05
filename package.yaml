@@ -1,7 +1,7 @@
 name:                coding-interview
 version:             0.1.0.0
 github:              "YusukeHosonuma/coding-interview"
-license:             BSD3
+license:             MIT
 author:              "Yusuke Hosonuma"
 maintainer:          "tobi462@gmail.com"
 copyright:           "(c) 2019 Yusuke Hosonuma"

@@ -14,7 +14,7 @@ bug-reports:    https://github.com/YusukeHosonuma/coding-interview/issues
 author:         Yusuke Hosonuma
 maintainer:     tobi462@gmail.com
 copyright:      (c) 2019 Yusuke Hosonuma
-license:        BSD3
+license:        MIT
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
