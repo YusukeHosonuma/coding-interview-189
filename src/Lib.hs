@@ -58,8 +58,27 @@ even' a = a `mod` 2 == 0
 -- prop> length' x == length x
 --
 length' :: [a] -> Int
-length' [] = 0
-length' (x:xs) = 1 + length' xs
+length' = foldr (\_ -> (+) 1) 0
+
+-- | `init`の独自実装
+--
+-- 標準APIと比較：
+-- prop> xs /= [] ==> init' xs == init xs
+--
+init' :: [a] -> [a]
+init' []     = errorWithoutStackTrace "list is empty"
+init' [x]    = []
+init' (x:xs) = x : init xs
+
+-- | `last`の独自実装
+--
+-- 標準APIと比較：
+-- prop> xs /= [] ==> last' xs == last xs
+--
+last' :: [a] -> a
+last' []     = errorWithoutStackTrace "list is empty"
+last' [x]    = x
+last' (_:xs) = last' xs
 
 -- | `filter`の独自実装
 --
