@@ -11,5 +11,5 @@
 ## テスト
 
 ```console
-stack exec doctest .
+make doctest
 ```
