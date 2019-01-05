@@ -36,4 +36,4 @@ isPalindrome xs = xs == reverse' xs
 isPalindrome' []       = True
 isPalindrome' [x]      = True
 isPalindrome' [x, y]   = x == y
-isPalindrome' (x:y:xs) = x == last xs && isPalindrome' (y : init xs)
+isPalindrome' (x:y:xs) = x == last' xs && isPalindrome' (y : init' xs)
