@@ -55,3 +55,4 @@ tests:
     dependencies:
     - coding-interview
     - doctest
+    - QuickCheck
