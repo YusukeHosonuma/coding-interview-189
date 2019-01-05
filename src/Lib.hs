@@ -58,8 +58,7 @@ even' a = a `mod` 2 == 0
 -- prop> length' x == length x
 --
 length' :: [a] -> Int
-length' [] = 0
-length' (x:xs) = 1 + length' xs
+length' = foldr (\_ -> (+) 1) 0
 
 -- | `init`の独自実装
 --
