@@ -29,7 +29,7 @@ not' False = True
 -- prop> elem' x xs == elem x xs
 --
 elem' :: (Eq a) => a -> [a] -> Bool
-elem' _ [] = False
+elem' _ []     = False
 elem' x (y:ys) = x == y || elem' x ys
 
 -- | `even`の独自実装
@@ -98,10 +98,10 @@ last' (_:xs) = last' xs
 --
 filter' :: (a -> Bool) -> [a] -> [a]
 filter' _ [] = []
-filter' f (x:xs) = if f x
-    then x : ys
-    else ys
-        where ys = filter' f xs
+filter' f (x:xs)
+    | f x       = x : ys
+    | otherwise = ys
+    where ys = filter' f xs
 
 -- | リストのソート（`sort`の独自実装）
 --
@@ -161,10 +161,9 @@ reverse' (x:xs) = reverse' xs ++ [x]
 --
 takeWhile' :: (a -> Bool) -> [a] -> [a]
 takeWhile' _ [] = []
-takeWhile' f (x:xs) = if f x
-    then x : takeWhile' f xs
-    else []
-
+takeWhile' f (x:xs)
+    | f x       = x: takeWhile' f xs
+    | otherwise = []
 
 -- | `dropWhile`の独自実装
 --
@@ -180,9 +179,9 @@ takeWhile' f (x:xs) = if f x
 --
 dropWhile' :: (a -> Bool) -> [a] -> [a]
 dropWhile' _ [] = []
-dropWhile' f zs@(x:xs) = if f x
-    then dropWhile' f xs
-    else zs
+dropWhile' f zs@(x:xs)
+    | f x       = dropWhile' f xs
+    | otherwise = zs
 
 -- | `span`の独自実装
 --
