@@ -4,6 +4,8 @@ module Set (
     insert'
 ) where
 
+import Lib
+
 -- | `Set`の独自実装
 newtype Set' a = Set' [a] deriving (Show)
 
@@ -25,7 +27,7 @@ empty' = Set' []
 -- 2
 --
 size' :: Set' a -> Int
-size' (Set' xs) = length xs
+size' (Set' xs) = length' xs
 
 -- | セットに要素を追加する
 --
@@ -38,5 +40,5 @@ size' (Set' xs) = length xs
 --
 insert' :: (Eq a) => a -> Set' a -> Set' a
 insert' x ys@(Set' xs)
-    | elem x xs = ys
-    | otherwise = Set' (x:xs)
+    | x `elem'` xs = ys
+    | otherwise   = Set' (x:xs)
