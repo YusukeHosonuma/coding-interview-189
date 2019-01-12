@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 51f0c0d2becb6072929afb23817133ca13fa27db3ab315278198bb84e384e052
+-- hash: 3b6f1a8e4910acd7ba18020e2d34dfc6dc055a876d2c46a93780c064fc1ff3e7
 
 name:           coding-interview
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
       Q1
       Q2
       Q3
+      Set
   other-modules:
       Paths_coding_interview
   hs-source-dirs:

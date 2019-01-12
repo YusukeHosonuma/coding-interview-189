@@ -3,8 +3,9 @@
 module Q1 where
 
 import Lib
+import Set
 
--- | 文字がすべて異なるか判定する。
+-- | 文字がすべて異なるか判定する。（再帰バージョン）
 --
 -- >>> isUnique ""
 -- True
@@ -30,3 +31,12 @@ isUnique :: String -> Bool
 isUnique [] = True
 isUnique [_] = True
 isUnique (x:xs) = not' (x `elem'` xs) && isUnique xs
+
+-- | 畳み込みバージョン
+--
+-- 再帰バージョンと比較：
+-- prop> isUnique s == isUnique' s
+--
+isUnique' :: String -> Bool
+isUnique' xs = length' xs == size' ys
+    where ys = foldr insert' Set.empty' xs
