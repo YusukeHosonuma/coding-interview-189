@@ -41,4 +41,4 @@ size' (Set' xs) = length' xs
 insert' :: (Eq a) => a -> Set' a -> Set' a
 insert' x ys@(Set' xs)
     | x `elem'` xs = ys
-    | otherwise   = Set' (x:xs)
+    | otherwise    = Set' (x:xs)
