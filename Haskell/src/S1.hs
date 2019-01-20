@@ -127,7 +127,7 @@ queen6 = nub [ sort [a, b, c, d, e, f]
             ptns = patterns2' size
             size = 6
 
---  7クイーン
+-- | 7クイーン
 --
 -- >>> length queen7
 -- 40
@@ -149,7 +149,7 @@ queen7 = nub [ sort [a, b, c, d, e, f, g]
 
 -- | 8クイーン
 --
--- >>> length queen8
+-- |>>> length queen8
 -- 92
 --
 queen8 :: [[Cell]]
@@ -167,9 +167,9 @@ queen8 = nub [ sort [a, b, c, d, e, f, g, h]
             ptns = patterns2' size
             size = 8
 
---  9クイーン
+-- | 9クイーン
 --
--- >>> length queen8
+-- |>>> length queen8
 -- 352
 --
 queen9 :: [[Cell]]
