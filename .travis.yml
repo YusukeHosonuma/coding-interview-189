@@ -16,9 +16,11 @@ before_install:
   - travis_retry curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
 install:
+  - cd Haskell
   - stack --no-terminal --install-ghc test --only-dependencies
 
 script:
+  - cd Haskell
   - stack --no-terminal --skip-ghc-check test
 
 notifications:
